@@ -195,7 +195,7 @@ Upload File   -> загрузил свой созданный образ centos-
 17. vagrant ssh
 18. git clone https://github.com/hellolightSP/otus.git
 19. cd ./otus
-20. cp /test_vm/Vagrantfile ./otus
+20. cp /test_vm/Vagrantfile ./
 21. git add --all
 22. git config --global user.email "hellolight2011@gmail.com"
 23. git commit -m "add Vagrant file"
