@@ -193,11 +193,70 @@ Upload File   -> загрузил свой созданный образ centos-
 12. Команды vagrant
 ```
 vagrant init HellolightSP/centos-8-kernel-6
-vagrant box add --name 'HellolightSP/centos-8-kernel-6' /home/neon/Downloads/centos-8-kernel-6-x86_64-Minimal.box
-vagrant box list
 vi Vagrantfile
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "HellolightSP/centos-8-kernel-6"
+end
+
+```
+Согласно инструкции https://docs.google.com/document/d/16NPWGU6aEnc5H-COlCY8u8vuV8b4LdrEUolpbSMfNS8/edit# скачиваем наш image и загружаем его в vagrant
+```
+vagrant box add --name 'HellolightSP/centos-8-kernel-6' /home/neon/Downloads/fc4eeb7f-f087-4a85-9355-e608b8bc7e84
+
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'HellolightSP/centos-8-kernel-6' (v0) for provider: 
+    box: Unpacking necessary files from: file:///home/neon/Downloads/fc4eeb7f-f087-4a85-9355-e608b8bc7e84
+    
+vagrant box list
+
+HellolightSP/centos-8-kernel-6 (virtualbox, 0)
+```
+Дописываем параметры указанные в методичке в Vagrantfile (конечный файл лежит в github)
+
+```
 vagrant up
+
+Bringing machine 'kernel-update' up with 'virtualbox' provider...
+==> kernel-update: Importing base box 'HellolightSP/centos-8-kernel-6'...
+==> kernel-update: Matching MAC address for NAT networking...
+==> kernel-update: Setting the name of the VM: test_vm_kernel-update_1678047191174_83927
+==> kernel-update: Clearing any previously set network interfaces...
+==> kernel-update: Preparing network interfaces based on configuration...
+    kernel-update: Adapter 1: nat
+==> kernel-update: Forwarding ports...
+    kernel-update: 22 (guest) => 2222 (host) (adapter 1)
+==> kernel-update: Running 'pre-boot' VM customizations...
+==> kernel-update: Booting VM...
+==> kernel-update: Waiting for machine to boot. This may take a few minutes...
+    kernel-update: SSH address: 127.0.0.1:2222
+    kernel-update: SSH username: vagrant
+    kernel-update: SSH auth method: private key
+    kernel-update: 
+    kernel-update: Vagrant insecure key detected. Vagrant will automatically replace
+    kernel-update: this with a newly generated keypair for better security.
+    kernel-update: 
+    kernel-update: Inserting generated public key within guest...
+    kernel-update: Removing insecure key from the guest if it's present...
+    kernel-update: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> kernel-update: Machine booted and ready!
+==> kernel-update: Checking for guest additions in VM...
+    kernel-update: No guest additions were detected on the base box for this VM! Guest
+    kernel-update: additions are required for forwarded ports, shared folders, host only
+    kernel-update: networking, and more. If SSH fails on this machine, please install
+    kernel-update: the guest additions and repackage the box to continue.
+    kernel-update: 
+    kernel-update: This is not an error message; everything may continue to work properly,
+    kernel-update: in which case you may ignore this message.
+==> kernel-update: Setting hostname...
+```
+```
 vagrant ssh
+
+Last login: Sat Mar  4 15:58:54 2023 from 10.0.2.2
+[vagrant@kernel-update ~]$ uname -r
+6.2.2-1.el8.elrepo.x86_64
+
 ```
 13. Команды git
 ```
