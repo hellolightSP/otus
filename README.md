@@ -180,13 +180,15 @@ echo "###   Hi from second stage" >> /boot/grub2/grub.cfg
 ==> Builds finished. The artifacts of successful builds are:
 --> centos-8: 'virtualbox' provider box: centos-8-kernel-6-x86_64-Minimal.box 
 ```
-11. *Далее ввиду отсутсвия рабочего VPN, подлючился к https://app.vagrantup.com/HellolightSP/boxes/ через VPN плагин в браузере Chrome, авторизовался используя аккаунт Sign in with GitHub, создал New Vagrant box "centos-8-kernel-6" Box version 1.0. В Edit Provider указал:*
+11. Далее ввиду отсутсвия рабочего VPN, зашел на https://app.vagrantup.com через VPN плагин в браузере Chrome, авторизовался используя аккаунт Sign in with GitHub, создал New Vagrant box "centos-8-kernel-6" Box version 1.0. В Edit Provider указал:
 ```
 Provider      -> virtualbox
 Checksum type -> SHA256
 Checksum      -> b4bb35e2c074b4b9710419a9bafc4283ce4a02b27d5b81bb8a714b576e5c2df7a
 Upload File   -> загрузил свой созданный образ centos-8-kernel-6-x86_64-Minimal.box
+После загрузки нажал кнопку Опубликовать.
 ```
+Ссылка на Vagrant Cloude https://app.vagrantup.com/HellolightSP/boxes/centos-8-kernel-6
 
 12. Команды vagrant
 ```
