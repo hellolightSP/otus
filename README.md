@@ -187,4 +187,18 @@ Checksum type -> SHA256
 Checksum      -> b4bb35e2c074b4b9710419a9bafc4283ce4a02b27d5b81bb8a714b576e5c2df7a
 Upload File   -> загрузил свой созданный образ centos-8-kernel-6-x86_64-Minimal.box
 ```
+12. vagrant init HellolightSP/centos-8-kernel-6
+13. vagrant box add --name 'HellolightSP/centos-8-kernel-6' /home/neon/Downloads/centos-8-kernel-6-x86_64-Minimal.box
+14. vagrant box list
+15. vi Vagrantfile    # редактируем параметры согласно методичке https://docs.google.com/document/d/12sC884LuLGST3-tZYQBDPvn6AH8AGJCK/edit?usp=share_link&ouid=107126378526912727172&rtpof=true&sd=true
+16. vagrant up
+17. vagrant ssh
+18. git clone https://github.com/hellolightSP/otus.git
+19. cd ./otus
+20. cp /test_vm/Vagrantfile ./otus
+21. git add --all
+22. git config --global user.email "hellolight2011@gmail.com"
+23. git commit -m "add Vagrant file"
+24. git push origin   #вводим логин и вместо пароля нужно в git создать токен, т.к. "Support for password authentication was removed on August 13, 2021."
+```
 
